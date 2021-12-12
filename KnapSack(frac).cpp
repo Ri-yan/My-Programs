@@ -23,13 +23,13 @@ void knapsack(float capacity, int n, float weight[], float profit[])
 	if(i < n)	
 		x[i]=y/weight[i];
 		totalprofit=totalprofit+(x[i]*profit[i]);
-		
-	printf("The selected elements are:-\n ");
+	printf("\nItems in Knapsack\n ");
+	printf("Profit Weight xi ");
 	for(i=0;i < n;i++)
 		if(x[i]==1.0)
-			printf("\nProfit %.1f with weight %.1f ", profit[i], weight[i]);
+			printf("\n%.1f  %.1f %.1f", profit[i], weight[i],x[i]);
 		else if(x[i] > 0.0)
-			printf("\n%.1f part of Profit %.1f with weight %.1f", x[i], profit[i], weight[i]);
+			printf("\n%.1f  %.1f %.1f", profit[i], weight[i],x[i]);
 	printf("\nTotal profit for %d objects with capacity %.1f = %.1f\n\n", n, capacity,totalprofit);
 }			
 main()
